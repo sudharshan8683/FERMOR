@@ -31,7 +31,7 @@ export default function Hero() {
 
   return (
     <section ref={box} onMouseMove={move} id="top" className="relative overflow-hidden bg-white"
-      style={{ backgroundImage: "radial-gradient(620px circle at var(--mx,75%) var(--my,10%), rgba(61,107,255,.16), transparent 60%), radial-gradient(rgba(11,27,58,.08) 1px, transparent 1px)", backgroundSize: "auto, 26px 26px" }}>
+      style={{ backgroundImage: "radial-gradient(620px circle at var(--mx,75%) var(--my,10%), rgba(99,102,241,.16), transparent 60%), radial-gradient(rgba(11,27,58,.08) 1px, transparent 1px)", backgroundSize: "auto, 26px 26px" }}>
       <div aria-hidden className="pointer-events-none absolute -right-20 top-10 hidden h-[28rem] w-[28rem] rounded-full border border-brand/15 lg:block" style={{ transform: `translate(${t.x * -70}px, ${t.y * -70}px)`, transition: "transform .2s" }} />
       <div className="wrap relative grid items-center gap-16 pb-28 pt-14 lg:grid-cols-[1.05fr_1fr] lg:pt-24">
         <div>
@@ -56,9 +56,9 @@ export default function Hero() {
               <span className="rounded-full bg-mint/10 px-3 py-1 text-xs font-bold text-mint">▲ 4.2%</span>
             </div>
             <svg viewBox="0 0 300 90" className="mt-4 w-full" aria-hidden>
-              <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#3d6bff" stopOpacity=".25" /><stop offset="1" stopColor="#3d6bff" stopOpacity="0" /></linearGradient></defs>
+              <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#6366f1" stopOpacity=".25" /><stop offset="1" stopColor="#6366f1" stopOpacity="0" /></linearGradient></defs>
               <polygon points={`${line} 300,90 0,90`} fill="url(#g)" />
-              <polyline points={line} fill="none" stroke="#2149e6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" pathLength="1" strokeDasharray="1" style={{ animation: "draw 2s ease forwards" }} />
+              <polyline points={line} fill="none" stroke="#4f46e5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" pathLength="1" strokeDasharray="1" style={{ animation: "draw 2s ease forwards" }} />
             </svg>
             <style>{`@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}`}</style>
             <div className="mt-5 grid grid-cols-3 gap-3 text-center text-xs">

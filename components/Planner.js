@@ -14,7 +14,7 @@ export default function Planner() {
   const pct = Math.max(8, Math.min(92, (put / total) * 100));
 
   return (
-    <div className="grid gap-8 rounded-3xl bg-brand p-6 text-paper sm:p-10 lg:grid-cols-2">
+    <div className="grid gap-8 rounded-3xl bg-gradient-to-br from-ink via-[#14306b] to-brand p-6 text-paper sm:p-10 lg:grid-cols-2">
       <div className="space-y-7">
         <label className="block">
           <span className="flex justify-between text-sm"><span>Save each month</span><b>{inr(monthly)}</b></span>
