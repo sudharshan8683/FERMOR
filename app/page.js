@@ -17,14 +17,14 @@ const principles = [
 export default function Home() {
   return (
     <>
-      <a href="#how" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[80] focus:rounded focus:bg-lime focus:px-3 focus:py-2">Skip to content</a>
+      <a href="#how" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[80] focus:rounded focus:bg-sky focus:px-3 focus:py-2">Skip to content</a>
       <Nav />
       <main>
         <Hero />
 
-        <section className="overflow-hidden border-b border-line bg-lime py-4 text-ink">
+        <section className="overflow-hidden border-b border-line bg-mist py-4 text-ink">
           <div className="marquee flex w-max gap-12 whitespace-nowrap font-serif text-xl">
-            {[0, 1].map((k) => ["Built for first-time earners", "Busy professionals", "Families planning ahead", "Anyone tired of jargon"].map((t) => <span key={k + t}>{t} <span className="mx-6 text-clay">✦</span></span>))}
+            {[0, 1].map((k) => ["Built for first-time earners", "Busy professionals", "Families planning ahead", "Anyone tired of jargon"].map((t) => <span key={k + t}>{t} <span className="mx-6 text-mint">✦</span></span>))}
           </div>
         </section>
 
@@ -45,13 +45,13 @@ export default function Home() {
           <Reveal><Planner /></Reveal>
         </section>
 
-        <section id="principles" className="bg-sand py-24">
+        <section id="principles" className="bg-mist py-24">
           <div className="wrap">
             <h2 className="max-w-2xl font-serif text-4xl sm:text-5xl">Finance should feel calm</h2>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {principles.map(([t, b], i) => (
                 <Tilt key={t} className="rounded-3xl border border-line bg-paper p-8 shadow-sm">
-                  <span className="font-serif text-3xl text-clay">0{i + 1}</span>
+                  <span className="font-serif text-3xl text-mint">0{i + 1}</span>
                   <h3 className="mt-6 text-xl font-medium">{t}</h3>
                   <p className="mt-3 text-ink/70">{b}</p>
                 </Tilt>

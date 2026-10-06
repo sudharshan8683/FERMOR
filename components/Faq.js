@@ -15,7 +15,7 @@ export default function Faq() {
       {items.map(([q, a], i) => (
         <div key={q}>
           <button onClick={() => setOpen(open === i ? -1 : i)} aria-expanded={open === i} className="flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-medium">
-            {q}<span className={`text-2xl text-clay transition ${open === i ? "rotate-45" : ""}`}>+</span>
+            {q}<span className={`text-2xl text-mint transition ${open === i ? "rotate-45" : ""}`}>+</span>
           </button>
           {open === i && <p className="max-w-2xl pb-6 text-ink/70">{a}</p>}
         </div>

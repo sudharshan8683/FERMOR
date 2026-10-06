@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Magnetic from "./Magnetic";
 
 const TARGET = 842300;
+const line = "0,70 40,62 80,66 120,48 160,52 200,32 240,38 300,12";
 
 export default function Hero() {
   const box = useRef(null);
@@ -23,44 +24,59 @@ export default function Hero() {
 
   const move = (e) => {
     const r = box.current.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-    setT({ x, y });
+    setT({ x: (e.clientX - r.left) / r.width - 0.5, y: (e.clientY - r.top) / r.height - 0.5 });
     box.current.style.setProperty("--mx", e.clientX - r.left + "px");
     box.current.style.setProperty("--my", e.clientY - r.top + "px");
   };
 
   return (
-    <section ref={box} onMouseMove={move} id="top" className="grain relative overflow-hidden bg-night text-paper"
-      style={{ backgroundImage: "radial-gradient(500px circle at var(--mx,70%) var(--my,20%), rgba(200,241,105,.14), transparent 60%), radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px)", backgroundSize: "auto, 22px 22px" }}>
-      <div aria-hidden className="pointer-events-none absolute -right-24 top-6 hidden h-[26rem] w-[26rem] rounded-full border border-lime/20 lg:block" style={{ transform: `translate(${t.x * -80}px, ${t.y * -80}px)`, transition: "transform .2s" }} />
-      <div aria-hidden className="pointer-events-none absolute bottom-10 left-[42%] hidden h-24 w-24 rounded-full bg-lime/10 blur-xl lg:block" style={{ transform: `translate(${t.x * 120}px, ${t.y * 120}px)`, transition: "transform .2s" }} />
-      <div className="wrap relative grid items-center gap-14 pb-28 pt-16 lg:grid-cols-[1.1fr_1fr] lg:pt-28">
+    <section ref={box} onMouseMove={move} id="top" className="relative overflow-hidden bg-white"
+      style={{ backgroundImage: "radial-gradient(620px circle at var(--mx,75%) var(--my,10%), rgba(61,107,255,.16), transparent 60%), radial-gradient(rgba(11,27,58,.08) 1px, transparent 1px)", backgroundSize: "auto, 26px 26px" }}>
+      <div aria-hidden className="pointer-events-none absolute -right-20 top-10 hidden h-[28rem] w-[28rem] rounded-full border border-brand/15 lg:block" style={{ transform: `translate(${t.x * -70}px, ${t.y * -70}px)`, transition: "transform .2s" }} />
+      <div className="wrap relative grid items-center gap-16 pb-28 pt-14 lg:grid-cols-[1.05fr_1fr] lg:pt-24">
         <div>
-          <p className="reveal in mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-1.5 text-xs uppercase tracking-widest text-lime">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-lime" /> Understand · Act · Grow
+          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-1.5 text-xs font-semibold text-brand shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-mint" /> Personal finance, made simple
           </p>
-          <h1 className="font-serif text-[2.9rem] leading-[1.02] sm:text-7xl lg:text-[5.5rem]">
-            Your money,<br /><em className="text-lime">finally</em> in focus.
+          <h1 className="font-serif text-[2.7rem] leading-[1.06] sm:text-6xl lg:text-[4.3rem]">
+            Understand your money. <span className="bg-gradient-to-r from-brand to-sky bg-clip-text text-transparent">Act</span> with confidence.
           </h1>
-          <p className="mt-7 max-w-lg text-lg text-paper/65">Fermor turns scattered accounts and confusing numbers into one clear picture and the next right step.</p>
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/65">Fermor brings your accounts, spending and goals into one clear view, then shows the next step worth taking. No jargon, no guesswork.</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Magnetic><a href="#start" className="btn bg-lime text-ink hover:brightness-110">Get started free</a></Magnetic>
-            <Magnetic><a href="#balance" className="btn border border-white/20 hover:bg-white/10">Try the money balancer</a></Magnetic>
+            <Magnetic><a href="#start" className="btn bg-brand px-7 text-white shadow-lg shadow-brand/30 hover:bg-ink">Get started free</a></Magnetic>
+            <Magnetic><a href="#balance" className="btn border border-line bg-white px-7 hover:border-brand hover:text-brand">Try the balancer</a></Magnetic>
           </div>
+          <p className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink/55"><span>✓ Plain language</span><span>✓ You stay in control</span><span>✓ Private by default</span></p>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md" style={{ transform: `perspective(900px) rotateY(${t.x * 8}deg) rotateX(${-t.y * 8}deg)`, transition: "transform .2s" }}>
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-7 backdrop-blur">
-            <p className="text-sm text-paper/60">Net worth</p>
-            <p className="font-serif text-5xl tabular-nums">₹{n.toLocaleString("en-IN")}</p>
-            <p className="mt-1 text-sm text-lime">▲ 4.2% this quarter</p>
-            <svg viewBox="0 0 240 80" className="mt-5 w-full" aria-hidden>
-              <polyline points="0,66 30,58 60,62 90,44 120,50 150,30 180,36 210,14 240,20" fill="none" stroke="#c8f169" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" pathLength="1" strokeDasharray="1" style={{ animation: "draw 2s ease forwards" }} />
+        <div className="relative mx-auto w-full max-w-md" style={{ transform: `perspective(900px) rotateY(${t.x * 7}deg) rotateX(${-t.y * 7}deg)`, transition: "transform .2s" }}>
+          <div className="rounded-3xl border border-line bg-white p-6 shadow-2xl shadow-brand/15 sm:p-7">
+            <div className="flex items-start justify-between">
+              <div><p className="text-sm text-ink/55">Net worth</p><p className="text-4xl font-extrabold tabular-nums tracking-tight">₹{n.toLocaleString("en-IN")}</p></div>
+              <span className="rounded-full bg-mint/10 px-3 py-1 text-xs font-bold text-mint">▲ 4.2%</span>
+            </div>
+            <svg viewBox="0 0 300 90" className="mt-4 w-full" aria-hidden>
+              <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#3d6bff" stopOpacity=".25" /><stop offset="1" stopColor="#3d6bff" stopOpacity="0" /></linearGradient></defs>
+              <polygon points={`${line} 300,90 0,90`} fill="url(#g)" />
+              <polyline points={line} fill="none" stroke="#2149e6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" pathLength="1" strokeDasharray="1" style={{ animation: "draw 2s ease forwards" }} />
             </svg>
             <style>{`@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}`}</style>
+            <div className="mt-5 grid grid-cols-3 gap-3 text-center text-xs">
+              {[["Spent", "₹38,120"], ["Left", "₹21,450"], ["Saved", "34%"]].map(([a, b]) => (
+                <div key={a} className="rounded-xl bg-mist p-3"><p className="text-ink/50">{a}</p><p className="mt-1 text-sm font-bold">{b}</p></div>
+              ))}
+            </div>
           </div>
-          <div className="absolute -right-3 -top-6 sm:-right-8" style={{ transform: `translate(${t.x * 50}px, ${t.y * 50}px)`, transition: "transform .15s" }}><div className="floaty rounded-2xl bg-lime px-4 py-3 text-sm font-medium text-ink shadow-xl">Emergency fund 68%</div></div>
-          <div className="absolute -bottom-6 -left-3 sm:-left-8" style={{ transform: `translate(${t.x * -50}px, ${t.y * -50}px)`, transition: "transform .15s" }}><div className="floaty rounded-2xl bg-paper px-4 py-3 text-sm text-ink shadow-xl" style={{ animationDelay: "-3s" }}><b>Next move:</b> pay card by the 14th</div></div>
+          <div className="absolute -right-3 -top-7 sm:-right-8" style={{ transform: `translate(${t.x * 50}px, ${t.y * 50}px)`, transition: "transform .15s" }}>
+            <div className="floaty w-44 rounded-2xl border border-line bg-white p-3 text-xs shadow-xl">
+              <p className="font-semibold">Emergency fund</p>
+              <div className="mt-2 h-1.5 rounded-full bg-mist"><div className="h-full w-[68%] rounded-full bg-brand" /></div>
+              <p className="mt-1 text-ink/50">68% of goal</p>
+            </div>
+          </div>
+          <div className="absolute -bottom-6 -left-3 sm:-left-9" style={{ transform: `translate(${t.x * -50}px, ${t.y * -50}px)`, transition: "transform .15s" }}>
+            <div className="floaty rounded-2xl bg-ink px-4 py-3 text-sm text-white shadow-xl" style={{ animationDelay: "-3s" }}><b>Next move:</b> pay card by the 14th</div>
+          </div>
         </div>
       </div>
     </section>

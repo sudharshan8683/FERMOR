@@ -19,7 +19,7 @@ export default function Journey() {
         <div role="tablist" className="flex gap-2">
           {steps.map((x, n) => (
             <button key={x.key} role="tab" aria-selected={n === i} onClick={() => setI(n)}
-              className={`rounded-full px-4 py-2 text-sm transition ${n === i ? "bg-moss text-paper" : "border border-line text-ink/70 hover:border-moss"}`}>
+              className={`rounded-full px-4 py-2 text-sm transition ${n === i ? "bg-brand text-paper" : "border border-line text-ink/70 hover:border-brand"}`}>
               {n + 1}. {x.key}
             </button>
           ))}
@@ -28,7 +28,7 @@ export default function Journey() {
         <p className="mt-4 text-ink/70">{s.body}</p>
       </div>
       <div className="lg:col-span-3 rounded-3xl border border-line bg-white p-6 shadow-sm sm:p-8" aria-live="polite">
-        <p className="text-xs uppercase tracking-widest text-leaf">{s.key}</p>
+        <p className="text-xs uppercase tracking-widest text-brand">{s.key}</p>
         <ul className="mt-4 divide-y divide-line">
           {s.rows.map(([a, b]) => (
             <li key={a} className="flex items-center justify-between gap-4 py-4">

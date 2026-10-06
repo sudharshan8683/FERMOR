@@ -28,12 +28,12 @@ export default function Balancer() {
           <input type="range" min="20" max="80" value={needs} onChange={(e) => { const v = +e.target.value; setNeeds(v); if (v + wants > 100) setWants(100 - v); }} className="mt-3 w-full" /></label>
         <label className="block"><span className="flex justify-between text-sm"><span>Wants (fun, travel)</span><b>{wants}%</b></span>
           <input type="range" min="0" max={100 - needs} value={wants} onChange={(e) => setWants(+e.target.value)} className="mt-3 w-full" /></label>
-        <div><Row label="Needs" pct={needs} color="#c8f169" /><Row label="Wants" pct={wants} color="#d9692e" /><Row label="Savings" pct={save} color="#f6f1e7" /></div>
+        <div><Row label="Needs" pct={needs} color="#6f93ff" /><Row label="Wants" pct={wants} color="#10b981" /><Row label="Savings" pct={save} color="#ffffff" /></div>
       </div>
       <div className="flex flex-col items-center justify-center text-center">
         <svg viewBox="0 0 120 120" className="w-56">
           <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,.1)" strokeWidth="9" />
-          <circle cx="60" cy="60" r="52" fill="none" stroke="#c8f169" strokeWidth="9" strokeLinecap="round" strokeDasharray={C} strokeDashoffset={C * (1 - score / 100)} transform="rotate(-90 60 60)" style={{ transition: "stroke-dashoffset .5s" }} />
+          <circle cx="60" cy="60" r="52" fill="none" stroke="#6f93ff" strokeWidth="9" strokeLinecap="round" strokeDasharray={C} strokeDashoffset={C * (1 - score / 100)} transform="rotate(-90 60 60)" style={{ transition: "stroke-dashoffset .5s" }} />
           <text x="60" y="58" textAnchor="middle" fill="#fbf8f2" fontSize="28" fontWeight="600">{score}</text>
           <text x="60" y="76" textAnchor="middle" fill="#fbf8f2" opacity=".55" fontSize="8">MONEY HEALTH</text>
         </svg>

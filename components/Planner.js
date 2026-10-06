@@ -14,7 +14,7 @@ export default function Planner() {
   const pct = Math.max(8, Math.min(92, (put / total) * 100));
 
   return (
-    <div className="grid gap-8 rounded-3xl bg-moss p-6 text-paper sm:p-10 lg:grid-cols-2">
+    <div className="grid gap-8 rounded-3xl bg-brand p-6 text-paper sm:p-10 lg:grid-cols-2">
       <div className="space-y-7">
         <label className="block">
           <span className="flex justify-between text-sm"><span>Save each month</span><b>{inr(monthly)}</b></span>
@@ -28,7 +28,7 @@ export default function Planner() {
           <span className="text-sm">Growth assumption</span>
           <div className="mt-3 flex flex-wrap gap-2">
             {Object.keys(rates).map((k) => (
-              <button key={k} onClick={() => setMode(k)} className={`rounded-full px-4 py-2 text-sm ${mode === k ? "bg-paper text-moss" : "border border-paper/30"}`}>
+              <button key={k} onClick={() => setMode(k)} className={`rounded-full px-4 py-2 text-sm ${mode === k ? "bg-paper text-brand" : "border border-paper/30"}`}>
                 {k} · {rates[k] * 100}%
               </button>
             ))}
@@ -39,9 +39,9 @@ export default function Planner() {
         <p className="text-sm text-paper/70">You could have about</p>
         <p className="font-serif text-5xl sm:text-6xl">{inr(total)}</p>
         <div className="mt-6 flex h-3 overflow-hidden rounded-full bg-paper/15" aria-hidden>
-          <div className="bg-paper/80" style={{ width: pct + "%" }} /><div className="bg-clay flex-1" />
+          <div className="bg-paper/80" style={{ width: pct + "%" }} /><div className="bg-mint flex-1" />
         </div>
-        <div className="mt-3 flex justify-between text-sm"><span>You put in {inr(put)}</span><span className="text-clay">Growth {inr(total - put)}</span></div>
+        <div className="mt-3 flex justify-between text-sm"><span>You put in {inr(put)}</span><span className="text-mint">Growth {inr(total - put)}</span></div>
         <p className="mt-6 text-xs text-paper/60">An illustration with steady returns, not a forecast or financial advice. Real returns vary.</p>
       </div>
     </div>

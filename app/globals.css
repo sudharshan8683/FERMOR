@@ -3,7 +3,7 @@
 @tailwind utilities;
 html { scroll-behavior: smooth; }
 body { @apply bg-paper text-ink font-sans antialiased; }
-input[type=range] { accent-color: #1f4d3a; }
+input[type=range] { accent-color: #2149e6; }
 .wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
 .btn { @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -17,3 +17,5 @@ input[type=range] { accent-color: #1f4d3a; }
 .shake:hover { animation: shake .45s ease; }
 .grain { background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 22px 22px; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .marquee, .floaty { animation: none; } }
+
+.font-serif { font-weight: 800; letter-spacing: -0.035em; }

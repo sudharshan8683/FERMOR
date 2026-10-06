@@ -26,8 +26,8 @@ export default function Cursor() {
   }, []);
   return (
     <>
-      <div ref={bar} className="fixed left-0 top-0 z-[70] h-[3px] bg-lime" style={{ width: 0 }} />
-      <div ref={ring} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-9 w-9 rounded-full border border-lime opacity-0 mix-blend-difference transition-[opacity] md:block" />
+      <div ref={bar} className="fixed left-0 top-0 z-[70] h-[3px] bg-sky" style={{ width: 0 }} />
+      <div ref={ring} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-9 w-9 rounded-full border border-sky opacity-0 transition-[opacity] md:block" />
     </>
   );
 }
