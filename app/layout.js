@@ -1,8 +1,9 @@
 import "./globals.css";
 import Cursor from "../components/Cursor";
-import { Manrope } from "next/font/google";
+import { Sora, DM_Sans } from "next/font/google";
 
-const sans = Manrope({ subsets: ["latin"], variable: "--font-sans" });
+const display = Sora({ subsets: ["latin"], variable: "--font-display" });
+const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata = {
   title: "Fermor — Understand, act and grow your money",
@@ -11,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${sans.variable}`}>
+    <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body><Cursor />{children}</body>
     </html>
   );

@@ -1,3 +1,4 @@
+import Logo from "../components/Logo";
 import Nav from "../components/Nav";
 import Hero from "../components/Hero";
 import Journey from "../components/Journey";
@@ -74,7 +75,7 @@ export default function Home() {
       </main>
       <footer className="border-t border-line py-10">
         <div className="wrap flex flex-col justify-between gap-3 text-sm text-ink/60 sm:flex-row">
-          <span className="font-serif text-lg text-ink">Fermor.</span>
+          <Logo size={26} />
           <span>Guidance and education, not financial advice. © {new Date().getFullYear()} Fermor</span>
         </div>
       </footer>
